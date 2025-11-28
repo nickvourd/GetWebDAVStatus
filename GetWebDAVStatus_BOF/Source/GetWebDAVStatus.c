@@ -29,11 +29,11 @@ void go(char* args, int length)
     pipeStatus = KERNEL32$WaitNamedPipeW(fullPipeName, 3000);
     if (pipeStatus == 0)
     {
-        BeaconPrintf(CALLBACK_ERROR, "[x] Unable to hit DAV pipe on %S, system is either unreachable or does not have WebClient service running", host);
+        BeaconPrintf(CALLBACK_ERROR, "Unable to hit DAV pipe on %S, system is either unreachable or does not have WebClient service running", host);
     }
     else
     {
-        BeaconPrintf(CALLBACK_OUTPUT, "[+] WebClient service is active on %S", host);
+        BeaconPrintf(CALLBACK_OUTPUT, "WebClient service is active on %S", host);
     }
     MSVCRT$free((void*)fullPipeName);
 }
